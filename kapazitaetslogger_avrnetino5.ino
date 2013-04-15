@@ -40,6 +40,7 @@ const int s2 = 9;     // the number of the pushbutton pin
 // oder const float referenzwert = 4.8828125;	        // Referenzwert in mV
 const float Usys = 5.16;   // Systemspannung an AVR-NetIO mit PC-Netzteil
 // const float Usys = 4.89;   // Systemspannung an Arduino-Mega mit USB-Stromversorgung
+// const float Usys = 3.30;   // Referenzspannung an Aref über Linearregler LM317
 float referenzwert = Usys*1000/1024; // Referenzwert in mV
 
 #define  PINUbatt   13       // Analog PIN Batteriespannung
@@ -66,7 +67,12 @@ float I = 0;
 float P = 0;
 float Q = 0;
 float Ah = 0;
-float Rlast = 1.5; // Lastwiderstand zur Entladung
+// Lastwiderstand Rlast vorher genau messen:
+// Für kurze Zeit eine möglichst hohe Spannung an den 
+// Widerstand anlegen und dabei den Strom messen, damit 
+// man einen genauen Widerstandswert erhält. Maximale 
+// Belastbarkeit beachten!
+float Rlast = 1.6032; // Lastwiderstand zur Entladung
 float Rbat = 0;  // Innenwiderstand der Batterie
 
 long loopCount = 0;
