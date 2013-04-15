@@ -1,3 +1,17 @@
+// ZACmeter
+// 
+// Software for metering and logging the capacity of an accu or battery 
+// or ZAC+-Device on an Arduino-like Hardware with measuring interface.
+// This Version is especially comatible with an AVR-NetIO-Board running
+// AVR-Netino as Arduino-Bootloader.
+//
+// Description of the whole project is available on the OSEG-Website:
+// http://wiki.opensourceecology.de/ZACmeter
+//
+// C-BY-SA 3.0: This work is Open Source and licensed under the 
+// Creative Commons Attribution-ShareAlike 3.0 License.
+//
+// 15.04.2013 Case06
 
 #include <Wire.h> 
 #include <LiquidCrystal_I2C.h>
@@ -26,7 +40,7 @@ const int s2 = 9;     // the number of the pushbutton pin
 // oder const float referenzwert = 4.8828125;	        // Referenzwert in mV
 const float Usys = 5.16;   // Systemspannung an AVR-NetIO mit PC-Netzteil
 // const float Usys = 4.89;   // Systemspannung an Arduino-Mega mit USB-Stromversorgung
-float referenzwert = Usys/1024*1000; // Referenzwert in mV
+float referenzwert = Usys*1000/1024; // Referenzwert in mV
 
 #define  PINUbatt   13       // Analog PIN Batteriespannung
 #define  PINUDS     14       // Analog PIN Spannungsabfall am FET (Drain-Source)
@@ -82,7 +96,7 @@ void setup()  {
  
   // Print a message to the LCD.
   lcd.setCursor(0,0);
-  lcd.print("Kap-tester V.005");
+  lcd.print("Kap-tester V.006");
   lcd.setCursor(0,1);
   lcd.print("by OS 04/2013");
   delay(2000);
