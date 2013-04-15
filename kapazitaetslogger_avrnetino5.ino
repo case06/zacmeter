@@ -8,7 +8,7 @@
 // Description of the whole project is available on the OSEG-Website:
 // http://wiki.opensourceecology.de/ZACmeter
 //
-// C-BY-SA 3.0: This work is Open Source and licensed under the 
+// CC-BY-SA 3.0: This work is Open Source and licensed under the 
 // Creative Commons Attribution-ShareAlike 3.0 License.
 //
 // 15.04.2013 Case06
